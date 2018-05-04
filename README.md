@@ -1,4 +1,4 @@
-# pushfyi
+
 README for PushFYI Server API's
 ===============================
 PushFYI is a open source Web-Sockets Server API's for developing real time collaboration applications like Google Docs, etc. It can be compiled and run on Linux flavors, currently tested on Ubuntu OS. It can communicate with multiple client side languages like Javascript, iOS and Android and also supports communicating with multiple server side languages like Java, PHP, C#, etc.<br>
@@ -19,7 +19,7 @@ Contact Us			- https://pushfyi.com/contact-us/
 Source Code Content:
 ====================
 
-src/ 				- PushFYI Web-Socket server code
-src/3rdparty/tinyxml/		- libtinyxml source code
-LICENSE				- contains Apache License v2.0
+src/ 			 	- PushFYI Web-Socket server code<br>
+src/3rdparty/tinyxml/		- libtinyxml source code <br>
+LICENSE				- contains Apache License v2.0<br>
 README.md			- This file
