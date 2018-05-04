@@ -13,23 +13,24 @@ Each and every utility used in PushFYI has been tested thoroughly and it has bee
 license v2.0. 
 The code is highly scalable for communicating with thousands of clients. It leverages async IO mechanism,
 namely epoll which is specifically available for Linux variants only from kernel 2.6 onwards.
-</pre>
+
 
 Links:
 ======
 
-The PushFYI web site		- https://pushfyi.com/ <br>
-API Docs			- https://docs.pushfyi.com/<br>
-Services			- https://pushfyi.com/services/pushfyi-managed-support/<br>
-Collaborative Editing Demo	- https://pushfyi.com/demo/collaborative-editing/<br>
-Real-time video-webRTC Demo	- https://pushfyi.com/demo/real-time-video-webrtc/<br>
-Real-time screen sharing Demo	- https://pushfyi.com/demo/screen-share/<br>
-Contact Us			- https://pushfyi.com/contact-us/
+The PushFYI web site . . . . . . . <a href="https://pushfyi.com/" rel="nofollow">https://pushfyi.com/</a>
+API Docs . . . . . . . . . . . . . <a href="https://docs.pushfyi.com/" rel="nofollow">https://docs.pushfyi.com/</a>
+Services . . . . . . . . . . . . . <a href="https://pushfyi.com/services/pushfyi-managed-support/" rel="nofollow">https://pushfyi.com/services/pushfyi-managed-support/</a>
+Collaborative Editing Demo . . . . <a href="https://pushfyi.com/demo/collaborative-editing/" rel="nofollow">https://pushfyi.com/demo/collaborative-editing/</a>
+Real-time video-webRTC Demo . . . .<a href="https://pushfyi.com/demo/real-time-video-webrtc/" rel="nofollow">https://pushfyi.com/demo/real-time-video-webrtc/</a>
+Real-time screen sharing Demo . . .<a href="https://pushfyi.com/demo/screen-share/" rel="nofollow">https://pushfyi.com/demo/screen-share/</a>
+Contact Us . . . . . . . . . . . . <a href="https://pushfyi.com/contact-us/" rel="nofollow">https://pushfyi.com/contact-us/</a>
 
-Source Code Content:
+Source Code Content: 
 ====================
 
 src/ 			 	- PushFYI Web-Socket server code<br>
 src/3rdparty/tinyxml/		- libtinyxml source code <br>
 LICENSE				- contains Apache License v2.0<br>
 README.md			- This file
+</pre>
