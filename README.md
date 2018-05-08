@@ -24,6 +24,7 @@ Services  . . . . . . . . . . . . . .<a href="https://pushfyi.com/services/pushf
 Collaborative Editing Demo  . . . . .<a href="https://pushfyi.com/demo/collaborative-editing/" rel="nofollow"> https://pushfyi.com/demo/collaborative-editing/</a>
 Real-time video-webRTC Demo  . . . . <a href="https://pushfyi.com/demo/real-time-video-webrtc/" rel="nofollow"> https://pushfyi.com/demo/real-time-video-webrtc/</a>
 Real-time screen sharing Demo  . . . <a href="https://pushfyi.com/demo/screen-share/" rel="nofollow"> https://pushfyi.com/demo/screen-share/</a>
+Real-time data-visualization Demo  . .<a href="https://pushfyi.com/demo/real-time-data-visualization/receiver/" rel="nofollow"> https://pushfyi.com/demo/real-time-data-visualization/receiver/</a>
 Contact Us  . . . . . . . . . . . . .<a href="https://pushfyi.com/contact-us/" rel="nofollow"> https://pushfyi.com/contact-us/</a>
 
 Source Code Content: 
