@@ -6,9 +6,9 @@ README for PushFYI Server API's
 ===============================
 
 PushFYI is a open source Web-Sockets Server API's for developing real time collaboration applications 
-like Google Docs, etc. It can be compiled and run on Linux flavors, currently tested on Ubuntu OS. It 
+like Google Docs, Google Keep etc. It can be compiled and run on Linux flavors, currently tested on Ubuntu OS. It 
 can communicate with multiple client side languages like Javascript, iOS and Android and also supports
-communicating with multiple server side languages like Java, PHP, C#, etc.
+communication with multiple server side languages like Java, PHP, C#, etc.
 Each and every utility used in PushFYI has been tested thoroughly and it has been licensed under Apache
 license v2.0. 
 The code is highly scalable for communicating with thousands of clients. It leverages async IO mechanism,
