@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>Documentation PushFYI</title>
+
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+	<link href="assets/css/skin-yellow.css" rel="stylesheet">  
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.ico">
+  </head>
+
+  <body>
+
+    <header class="site-header sticky">
+
+      <!-- Top navbar & branding -->
+      <nav class="navbar navbar-light">
+        <div class="container">
+
+          <!-- Toggle buttons and brand -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+
+            <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
+          </div>
+          <!-- END Toggle buttons and brand -->
+
+          <!-- Top navbar -->
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+            <ul class="nav navbar-nav navbar-right">
+                <li class=""><a href="releasenotes.html">Release Notes</a></li>
+                <li class=""><a href="changelog.html">Changelog</a></li>
+            </ul>
+          </div>
+          <!-- END Top navbar -->
+
+        </div>
+      </nav>
+      <!-- END Top navbar & branding -->
+      
+    </header>
+
+
+    <main class="container">
+      <div class="row">
+
+        <!-- Sidebar -->
+          <aside class="col-md-3 col-sm-3 sidebar">
+              <ul class="sidenav dropable sticky">
+                  <li class=""><a href="index.html">Welcome</a></li>
+                  <li>
+                      <a class="active" href="#">Overview</a>
+                      <ul>
+                          <li><a href="pushfyioverview.html" class="">PushFYI Overview</a></li>
+                          <li class="active"><a href="apibasics.html">API Basics</a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a class="" href="#">API Documentation</a>
+                      <ul>
+                          <a class="" href="#">Server API</a>
+                          <ul>
+
+                              <li><a href="dotnetapi.html">C# .NET API</a></li>
+                              <li><a href="javaapi.html">JAVA API</a></li>
+                              <li><a href="phpapi.html">PHP API</a></li>
+                              <li><a href="pythonapi.html">PYTHON API</a></li>
+
+                          </ul>
+                          <a class="" href="#">Client API</a>
+                          <ul>
+                              <li><a href="javascriptapi.html">JAVASCRIPT API</a></li>
+                              <li><a href="iosapi.html">iOS API</a></li>
+                              <li><a href="androidapi.html">ANDROID API</a></li>
+                          </ul>
+                      </ul>
+                  </li>
+                  <li class=""><a href="testconnection.html">Test Connection</a></li>
+                  <li class=""><a href="troubleshoot.html">Troubleshoot</a></li>
+                  <li class=""><a href="https://pushfyi.com/contact-us">Report Issues</a></li>
+                  <li>
+                      <a class="" href="#">History</a>
+                      <ul>
+                          <li><a href="../v1.0/index.html">Version 1.0</a></li>
+                          <li><a href="../v1.2/index.html">Version 1.2</a></li>
+                          <li><a href="../v1.3/index.html">Version 1.3</a></li>
+                          <li><a href="../v1.4/index.html">Version 1.4</a></li>
+                      </ul>
+
+                  </li>
+              </ul>
+          </aside>
+          
+        <!-- END Sidebar -->
+
+
+        <!-- Main content -->
+        <article class="col-md-9 col-sm-9 main-content" role="main">
+          
+          
+
+            <section>
+                <h2 id="basic_api">API Basics</h2>
+                <div class="code-window">
+                    <div class="code-preview">
+                        <p>
+                            PushFYI APIs are classified into 2 categories:
+                        </p>
+                        <ul>
+
+                            <li>Client API</li>
+                            <li>Server API</li>
+                        </ul>
+                        <p> 
+							Client APIs are utilized by the client side of your application e.g. Android,
+							Objective-C and JavaScript. Server APIs are utilized by the server side of your applications
+							e.g. Core PHP API, Core JAVA API, .Net API and Wordpress API etc.
+                        </p>
+                        <p>
+                            PushFYI APIs offer all the necessary functions to create real-time features for your applications.
+                        </p>
+                        <p>
+                            Please refer to the corresponding documentation of the API for specific details. This article will
+							provide you the general overview of the PushFYI API structure.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3 id="client_api">Client APIs</h3>
+                <div class="code-window">
+                    <div class="code-preview">
+
+                        <p>
+                            PushFYI client APIs offer 3 main functions.
+                        </p>
+                        <ul class="step-text">
+                            <li>
+                                <h5>init</h5>
+                                <p>
+                                    
+                                        init API allows your client application to connect to the PushFYI WebSocket gateway.
+										This must be the first call by a client before it can make a call to publish or subscribe
+										real-time data.
+                                </p>
+                                <p>
+                                    The init API connects your client to PushFYI WebSocket gateway and carries out the PushFYI
+									handshake process. The PushFYI handshake is the key to a successful connection to PushFYI before
+									a client can send or receive real-time data.
+                                </p>
+
+                            </li>
+                            <li>
+                                <h5>subscribe</h5>
+                                <p>
+                                    subscribe API allows your client application to register interest in any type
+									of real-time messages. Clients can register their interest in an event by providing
+									a logical name to it called data channel.
+                                </p>
+                            </li>
+                            <li>
+                                <h5>publish</h5>
+                                <p>
+                                    publish API allows your client application to send a real-time message by providing a
+									logical name to it called data channel. The data channel is merely a logical name.
+                                </p>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            </section>
+			
+            <section>
+                <h3 id="client_api">Server APIs</h3>
+                <div class="code-window">
+                    <div class="code-preview">
+
+                        <p>
+                            PushFYI Server APIs offers to utilize Server-side events. Server-side events allow your application
+                            server to stream real-time data to and from your client application.
+                        </p>
+                        <p>
+							You can use server side events to stream data from your nodejs or C# .Net application to your 
+							browser or mobile clients. Server APIs are available for multiple platforms. Check our 
+							<a href="https://pushfyi.com/contact-us">downloads</a> page to download the Server API that suits you best.
+                        </p>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+		
+		 
+			
+			<!-- end section -->
+			
+			
+			<!-- start section -4 -->
+			
+		      </article>
+        <!-- END Main content -->
+      </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+              <p>&copy; PushFYI 2017</p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <ul class="footer-menu">
+              
+                <li><a href="mailto:info@pushfyi.com">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+
+    <!-- Scripts -->
+    <script src="assets/js/theDocs.all.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>

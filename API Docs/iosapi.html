@@ -1,0 +1,476 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>Documentation PushFYI</title>
+
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+	<link href="assets/css/skin-yellow.css" rel="stylesheet">  
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.ico">
+  </head>
+
+  <body>
+
+    <header class="site-header sticky">
+
+      <!-- Top navbar & branding -->
+      <nav class="navbar navbar-light">
+        <div class="container">
+
+          <!-- Toggle buttons and brand -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+
+            <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
+          </div>
+          <!-- END Toggle buttons and brand -->
+
+          <!-- Top navbar -->
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+            <ul class="nav navbar-nav navbar-right">
+                <li class=""><a href="releasenotes.html">Release Notes</a></li>
+                <li class=""><a href="changelog.html">Changelog</a></li>
+            </ul>
+          </div>
+          <!-- END Top navbar -->
+
+        </div>
+      </nav>
+      <!-- END Top navbar & branding -->
+      
+    </header>
+
+
+    <main class="container">
+      <div class="row">
+
+        <!-- Sidebar -->
+          <aside class="col-md-3 col-sm-3 sidebar">
+              <ul class="sidenav dropable sticky">
+                  <li class=""><a href="index.html">Welcome</a></li>
+                  <li>
+                      <a class="" href="#">Overview</a>
+                      <ul>
+                          <li><a href="pushfyioverview.html" class="">PushFYI Overview</a></li>
+                          <li><a href="apibasics.html">API Basics</a></li>
+                      </ul>
+                  </li>
+                  <li class="active">
+                      <a class="" href="#">API Documentation</a>
+                      <ul>
+                          <a class="" href="#">Server API</a>
+                          <ul>
+
+                              <li><a href="dotnetapi.html">C# .NET API</a></li>
+                              <li><a href="javaapi.html">JAVA API</a></li>
+                              <li><a href="phpapi.html">PHP API</a></li>
+                              <li><a href="pythonapi.html">PYTHON API</a></li>
+
+                          </ul>
+                          <a class="" href="#">Client API</a>
+                          <ul>
+                              <li><a href="javascriptapi.html">JAVASCRIPT API</a></li>
+                              <li class="active"><a href="iosapi.html">iOS API</a></li>
+                              <li><a href="androidapi.html">ANDROID API</a></li>
+                          </ul>
+                      </ul>
+                  </li>
+                  <li class=""><a href="testconnection.html">Test Connection</a></li>
+                  <li class=""><a href="troubleshoot.html">Troubleshoot</a></li>
+                  <li class=""><a href="https://pushfyi.com/contact-us">Report Issues</a></li>
+                  <li>
+                      <a class="" href="#">History</a>
+                      <ul>
+                          <li><a href="../v1.0/index.html">Version 1.0</a></li>
+                          <li><a href="../v1.2/index.html">Version 1.2</a></li>
+                          <li><a href="../v1.3/index.html">Version 1.3</a></li>
+                          <li><a href="../v1.4/index.html">Version 1.4</a></li>
+                      </ul>
+
+                  </li>
+              </ul>
+          </aside>
+          
+        <!-- END Sidebar -->
+
+
+        <!-- Main content -->
+        <article class="col-md-9 col-sm-9 main-content" role="main">
+          
+          
+
+            <section>
+                <h2 id="iosAPI_intro">iOS API</h2>
+
+                <div class="code-window">
+                    <div class="code-preview">
+                        
+                        <p>
+                            The iOS API allows user to send and receive real-time
+                            messages via the PushFYI server. The iOS API use NSInputStream and NSOutputStream to connect to PushFYI
+                            and exchange real-time messages.
+                        </p>
+                        <p>
+                   			The iOS API has three main functions in addition to one helper function. In this documentation we will
+                            examine the API usage and some of the best practices.
+                        </p>
+                    </div>
+
+                </div>
+                </section>
+            <section>
+                <h2 id="init_function">init()</h2>
+                <div class="code-window">
+                    <div class="code-preview">
+                        <p>
+                            The init method allows user to connect with PushFYI to send and receive
+                            real-time messages. It is important for a user application to first connect to PushFYI prior to
+                            sending or receiving any real-time messages. Hence, this must be the first method that your client application
+                            will call in order to use PushFYI real-time transport.
+                        </p>
+                        <p>
+                            This PushFYI init method is invoked by calling the PushFYI class interface.
+                        </p>
+                        <div class="callout callout-info" role="alert">
+                            <h4>API Prototype: </h4>
+                            <p>
+                                <code>- (void) initWithSecret:(NSString*)secret address:(NSString*)address issecure:(BOOL)issecure;</code>
+                            </p>
+                        </div>
+                        <div class="callout callout-info" role="alert">
+                            <h4>API Sample Usage: </h4>
+                            <code>
+                              <p>mPushFyi =[PushFYI alloc];</p>
+                              <p>[mPushFyi init:&lt;your secret key&gt; address: "ws://&lt;your pushfyi ip address&gt;" issecure:&lt;true/false&gt;]; </p>
+                            </code>
+                        </div>
+                        <p>
+                            <strong>
+                                Parameter List:
+                            </strong>
+                        </p>
+                        <table class="table table-bordered table-striped table-info">
+                            <thead>
+                                <tr>
+                                    <th>SN</th>
+                                    <th>parameters</th>
+                                    <th>note</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">appsecret</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">
+                                        This parameter identifies your App when it connects to PushFYI. Since PushFYI
+                                        can serve real-time messages to many apps simultaneously. This field allows
+                                        PushFYI to distinguish between Apps, so that real-time messages from one App do not mix up
+                                        with another App. The value of appsecret parameter is in UUID format. e.g. 123e4567-e89b-12d3-a456-426655440000
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">address</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">
+                                        URL of your pushfyi instance. e.g. ws://10.0.0.101 for plain text connection
+                                        and wss://10.0.0.101 for secure connection.
+                                    </td>
+                                </tr>
+                                <tr>
+                                <th scope="row">3</th>
+                                <td style="font-family:Arial, Helvetica, sans-serif">secure</td>
+                                <td style="font-family:Arial, Helvetica, sans-serif">
+                                This parameter identifies your connection with PushFYI to check if it's secure.
+                                </td>
+                                </tr>
+                                </tbody>
+                        </table>
+                        <p>
+                            <strong>
+                                Code Sample:
+                            </strong>
+                        </p>
+<pre class="line-numbers">
+<code class="language-objectivec">
+mPushFyi =[PushFYI alloc];
+mPushFyi init:&lt;your secret key&gt; address: "ws://&lt;your pushfyi ip address&gt;" issecure:&lt;true/false&gt;];
+</code>
+</pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2 id="subscribe_function">subscribe</h2>
+                <div class="code-window">
+                    <div class="code-preview">
+                        <p>
+                            The subscribe method allows user to register their interest in a given data channel.
+                            PushFYI data channels are logical names to which real-time messages are sent and received.
+                            Once the connection is established using the init method, your application can make a call to subscribe
+                            method to show interest in a specified data channel.
+                        </p>
+                        <div class="callout callout-info" role="alert">
+                            <h4>API Prototype: </h4>
+                            <p>
+                                <code>-(id<Subscription>) subscribe:(NSString *)channel;</code>
+                            </p>
+                        </div>
+                        <div class="callout callout-info" role="alert">
+                            <h4>API Sample Usage:</h4>
+                                <code>
+                                MessageChannel *msg = [[MessageChannel alloc] init];<br />
+                                id &lt;Subscription&gt; channeMSG=[mPushFyi subscribe:subscribeChannelName];<br />
+                                [channeMSG bind:msg];
+                                </code>
+                        </div>
+                        <p>
+                            <strong>
+                                Parameter List:
+                            </strong>
+                        </p>
+                        <table class="table table-bordered table-striped table-info">
+                            <thead>
+                                <tr>
+                                    <th>SN</th>
+                                    <th>parameters</th>
+                                    <th>note</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">channel</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">
+                                        The logical name of the data channel associated with an event.
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">callback</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">
+                                        A callback function to call when the API receives an event with a given data channel. It returns channel name and data in payload.
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            <strong>
+                                Code Sample:
+                            </strong>
+                        </p>
+<pre id="highlighter" class="line-numbers">
+<code class="language-objectivec">
+MessageChannel *msg = [[MessageChannel alloc] init];<br />
+id &lt;Subscription&gt channeMSG=[mPushFyi subscribe:subscribeChannelName];<br />
+[channeMSG bind:msg];
+
+
+callback function 
+-(void)onSubscriptionEvent:(NSString *)channel payload:(NSString*) payload
+{
+}
+</code></pre>
+                    </div>
+
+                </div>
+            </section>
+            <section>
+                <h2 id="publish_function">publish</h2>
+                <div class="code-window">
+                    <div class="code-preview">
+                        <p>
+                            The publish method allows user to publish a real-time message on a given data channel.
+                            PushFYI data channels are logical names to which real-time messages are sent and received.
+                            Once the connection is established using the init method, your application can make a call to publish
+                            method to send a real-time message on the specified data channel.
+                        </p>
+                        <div class="callout callout-info" role="alert">
+                            <h4>API Prototype: </h4>
+                            <p>
+                                <code>-(void) publish:(NSString *)payload channel:(NSString *)channel;</code>
+                            </p>
+                        </div>
+                        <div class="callout callout-info" role="alert">
+                            <h4>API Sample Usage: </h4>
+                            <p>
+                            <code>   NSString *payload =[NSString stringWithFormat:@"[{\"username\":\"Henry\",\"message\":\"Hi, how are you ?\"}]"];<br />
+                            [mPushFyi publish:payload channel:@"my_data_channel"];</code>
+                            </p>
+                        </div>
+                        <p>
+                            <strong>
+                                Parameter List:
+                            </strong>
+                        </p>
+                        <table class="table table-bordered table-striped table-info">
+                            <thead>
+                                <tr>
+                                    <th>SN</th>
+                                    <th>parameters</th>
+                                    <th>note</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">channel</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">
+                                        The logical name of the data channel associated with an event.
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">payload</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">
+                                        json string as template argument.
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            <strong>
+                                Code Sample:
+                            </strong>
+                        </p>
+                        <pre class="line-numbers">
+<code class="language-markup">
+NSString *payload =[NSString stringWithFormat:@"[{\"username\":\"Henry\",\"message\":\"Hi, how are you ?\"}]"];
+
+[mPushFyi publish:payload channel:@"my_data_channel"];
+</code></pre>
+                    </div>
+
+                </div>
+            </section>
+            <section>
+                <h2 id="on_function">on()</h2>
+                <div class="code-window">
+                    <div class="code-preview">
+
+                        <p>
+                            The PushFYI iOS on method allows you to receive connection callbacks from the API.
+                        </p>
+                        <div class="callout callout-info" role="alert">
+                            <h4>API Prototype: </h4>
+                            <p>
+                                <code>-(void) on:(id<ConnectionListener>)callbacks;</code>
+                            </p>
+                        </div>
+                        <div class="callout callout-info" role="alert">
+                            <h4>API Sample Usage: </h4>
+                            <p>
+                                <code>
+                                mConnectionEvents= [[PushFYIEventsViewController alloc]init];<br />
+                                [mPushFyi on:mConnectionEvents];
+                                </code>
+                            </p>
+                        </div>
+                        <p>
+                            <strong>
+                                Parameter List:
+                            </strong>
+                        </p>
+                        <table class="table table-bordered table-striped table-info">
+                            <thead>
+                                <tr>
+                                    <th>SN</th>
+                                    <th>parameters</th>
+                                    <th>note</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">callbacks</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">
+                                        The internal connection event that may occur. This Parameter can have 3 values "connecting","connected" or "disconnected".
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                        <p>
+                            <strong>
+                                Code Sample:
+                            </strong>
+                        </p>
+                        <pre class="line-numbers">
+<code class="language-objectivec">
+mConnectionEvents= [[PushFYIEventsViewController alloc]init];
+
+[mPushFyi on:mConnectionEvents];
+</code></pre>
+                    </div>
+
+                </div>
+            </section>
+			
+		
+		 
+			
+			<!-- end section -->
+			
+			
+			<!-- start section -4 -->
+			
+		      </article>
+        <!-- END Main content -->
+      </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+              <p>&copy; PushFYI 2017</p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <ul class="footer-menu">
+              
+                <li><a href="mailto:info@pushfyi.com">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+
+    <!-- Scripts -->
+    <script src="assets/js/theDocs.all.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>

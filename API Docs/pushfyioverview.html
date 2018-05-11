@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>Documentation PushFYI</title>
+
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+	<link href="assets/css/skin-yellow.css" rel="stylesheet">  
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.ico">
+  </head>
+
+  <body>
+
+    <header class="site-header sticky">
+
+      <!-- Top navbar & branding -->
+      <nav class="navbar navbar-light">
+        <div class="container">
+
+          <!-- Toggle buttons and brand -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+
+            <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
+          </div>
+          <!-- END Toggle buttons and brand -->
+
+          <!-- Top navbar -->
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="releasenotes.html">Release Notes</a></li>
+                <li class="hero"><a href="changelog.html">Changelog</a></li>
+            </ul>
+          </div>
+          <!-- END Top navbar -->
+
+        </div>
+      </nav>
+      <!-- END Top navbar & branding -->
+      
+    </header>
+
+
+    <main class="container">
+      <div class="row">
+
+        <!-- Sidebar -->
+          <aside class="col-md-3 col-sm-3 sidebar">
+              <ul class="sidenav dropable sticky">
+                  <li class=""><a href="index.html">Welcome</a></li>
+                  <li>
+                      <a class="active" href="#">Overview</a>
+                      <ul>
+                          <li><a href="pushfyioverview.html" class="active">PushFYI Overview</a></li>
+                          <li><a href="apibasics.html">API Basics</a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a class="" href="#">API Documentation</a>
+                      <ul>
+                          <a class="" href="#">Server API</a>
+                          <ul>
+
+                              <li><a href="dotnetapi.html">C# .NET API</a></li>
+                              <li><a href="javaapi.html">JAVA API</a></li>
+                              <li><a href="phpapi.html">PHP API</a></li>
+                              <li><a href="pythonapi.html">PYTHON API</a></li>
+
+                          </ul>
+                          <a class="" href="#">Client API</a>
+                          <ul>
+                              <li><a href="javascriptapi.html">JAVASCRIPT API</a></li>
+                              <li><a href="iosapi.html">iOS API</a></li>
+                              <li><a href="androidapi.html">ANDROID API</a></li>
+                          </ul>
+                      </ul>
+                  </li>
+                  <li class=""><a href="testconnection.html">Test Connection</a></li>
+                  <li class=""><a href="troubleshoot.html">Troubleshoot</a></li>
+                  <li class=""><a href="https://pushfyi.com/contact-us">Report Issues</a></li>
+                  <li>
+                      <a class="" href="#">History</a>
+                      <ul>
+                          <li><a href="../v1.0/index.html">Version 1.0</a></li>
+                          <li><a href="../v1.2/index.html">Version 1.2</a></li>
+                          <li><a href="../v1.3/index.html">Version 1.3</a></li>
+                          <li><a href="../v1.4/index.html">Version 1.4</a></li>
+                      </ul>
+
+                  </li>
+              </ul>
+          </aside>
+          
+        <!-- END Sidebar -->
+
+
+        <!-- Main content -->
+        <article class="col-md-9 col-sm-9 main-content" role="main">
+          
+          
+
+            <section>
+                <h2 id="pushfyi_overview">PushFYI Overview</h2>
+                
+                <div class="code-window">
+                    <div class="code-preview">
+                        <p>
+                            PushFYI is a real-time data streaming server that allows you to easily build, 
+                            test and deploy real-time features in your web and mobile apps. At its heart, 
+                            PushFYI uses HTML5 WebSockets to talk to client applications. PushFYI can also 
+                            act as a gateway between the server and the client side of your application. This 
+							means that you can easily send data from your ASP.Net or PHP backend to your
+							browser in real-time.
+                        </p>
+                        <p>
+                            PushFYI offers publish/subscribe messaging, so you can choose which client 
+                            receive which event. This is implemented using PushFYI data channels. You will learn 
+                            more about data channels in the coming sections of this documentation.
+                        </p>
+                        <p>
+                            PushFYI also supports TLS for secure clients. You can deploy your SSL certificate 
+                            and keys with PushFYI or can use self-signed keys during development phase of your application.
+                        </p>
+                        <p>
+                            PushFYI also supports alternate port configuration for HTTP. By default, PushFYI listens on Port 
+                            80 for insecure clients and Port 443 for secure clients. HTTP Alternate port allows you to use any 
+                            other port than the standard HTTP Ports. Assuming we choose HTTP Alternate PORT as 8080, PushFYI 
+							will then listen on port 8080 for both secure and insecure clients. This feature is useful during 
+							development and allows PushFYI to coexist with your HTTP server.
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+            <section>
+                <h2 id="pushfyi_intro">API Overview</h2>
+                <div class="code-window">
+                    <div class="code-preview">
+                        <p>
+                            Getting started with PushFYI is really simple. All you need to do is choose the 
+							right API for your target platform. PushFYI team is constantly working to provide
+							more and more APIs, so you can choose the right platform for development of your
+							application. Let's assume you are creating a CRM application in ASP .Net, in this case
+							you can choose PushFYI .Net API for your server side and PushFYI JavaScript API for your client side.
+                        </p>
+                        <p>
+                            Visit <a href="https://pushfyi.com">pushfyi.com</a> for a complete list of APIs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+			
+		
+		 
+			
+			<!-- end section -->
+			
+			
+			<!-- start section -4 -->
+			
+		      </article>
+        <!-- END Main content -->
+      </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+              <p>&copy; PushFYI 2017</p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <ul class="footer-menu">
+              
+                <li><a href="mailto:info@pushfyi.com">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+
+    <!-- Scripts -->
+    <script src="assets/js/theDocs.all.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>

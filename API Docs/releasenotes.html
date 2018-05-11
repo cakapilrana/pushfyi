@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>PushFYI - Documentation</title>
+
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+	<link href="assets/css/skin-yellow.css" rel="stylesheet">  
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.ico">
+  </head>
+
+  <body>
+
+    <header class="site-header sticky">
+
+      <!-- Top navbar & branding -->
+      <nav class="navbar navbar-light">
+        <div class="container">
+
+          <!-- Toggle buttons and brand -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+
+            <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
+          </div>
+          <!-- END Toggle buttons and brand -->
+
+          <!-- Top navbar -->
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="releasenotes.html">Release Notes</a></li>
+                <li class="hero"><a href="changelog.html">Changelog</a></li>
+            </ul>
+          </div>
+          <!-- END Top navbar -->
+
+        </div>
+      </nav>
+      <!-- END Top navbar & branding -->
+      
+    </header>
+
+
+    <main class="container">
+      <div class="row">
+
+        <!-- Sidebar -->
+          <aside class="col-md-3 col-sm-3 sidebar">
+              <ul class="sidenav dropable sticky">
+                  <li class=""><a href="index.html">Welcome</a></li>
+                  <li>
+                      <a class="" href="#">Overview</a>
+                      <ul>
+                          <li><a href="pushfyioverview.html" class="">PushFYI Overview</a></li>
+                          <li><a href="apibasics.html">API Basics</a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a class="" href="#">API Documentation</a>
+                      <ul>
+                          <a class="" href="#">Server API</a>
+                          <ul>
+
+                              <li><a href="dotnetapi.html">C# .NET API</a></li>
+                              <li><a href="javaapi.html">JAVA API</a></li>
+                              <li><a href="phpapi.html">PHP API</a></li>
+                              <li><a href="pythonapi.html">PYTHON API</a></li>
+
+                          </ul>
+                          <a class="" href="#">Client API</a>
+                          <ul>
+                              <li><a href="javascriptapi.html">JAVASCRIPT API</a></li>
+                              <li><a href="iosapi.html">iOS API</a></li>
+                              <li><a href="androidapi.html">ANDROID API</a></li>
+                          </ul>
+                      </ul>
+                  </li>
+                  <li class=""><a href="testconnection.html">Test Connection</a></li>
+                  <li class=""><a href="troubleshoot.html">Troubleshoot</a></li>
+                  <li class=""><a href="https://pushfyi.com/contact-us">Report Issues</a></li>
+                  <li>
+                      <a class="" href="#">History</a>
+                      <ul>
+                          <li><a href="../v1.0/index.html">Version 1.0</a></li>
+                          <li><a href="../v1.2/index.html">Version 1.2</a></li>
+                          <li><a href="../v1.3/index.html">Version 1.3</a></li>
+                          <li><a href="../v1.4/index.html">Version 1.4</a></li>
+                      </ul>
+
+                  </li>
+              </ul>
+          </aside>
+          
+        <!-- END Sidebar -->
+
+
+        <!-- Main content -->
+        <article class="col-md-9 col-sm-9 main-content" role="main">
+          
+          
+
+            <section>
+                <h2 class="active" id="pushfyi_intro">Release Notes</h2>
+                <p></p>
+                <div class="code-window">
+                    <div class="code-preview">
+
+                        <h3>Introduction</h3>
+                        <p>
+                            Welcome to the release notes for PushFYI(2017) version 1.4.
+                            Please review these Release notes to find out what is new in this
+                            version as well as important remarks concerning known issues and their
+                            workarounds before you install PushFYI v1.4.
+                        </p>
+                        <ul class="step-text">
+                            <li>
+                                <h5>Disclaimer of Warranty</h5>
+                                <p>
+                                    The content in this document represents the current view of
+                                    PushFYI as of the day of the month of publication. Because PushFYI
+                                    responds constantly to changing market conditions, this document should
+                                    not be read as a commitment on the part of PushFYI, Inc. PushFYI, Inc. cannot
+                                    guarantee the accuracy of any information presented after the date of publication.
+                                    © 2017 PushFYI, Inc. All rights reserved. PushFYI, the PushFYI logo, are registered
+                                    trademarks of PushFYI, Inc. All other brand names are trademarks or registered trademarks
+                                    of their respective companies. Information in this document is subject to change without notice.
+                                    For the latest documentation, visit our Website at <a href="https://pushfyi.com">pushfyi.com</a>. 
+                                    The names of actual companies and products mentioned herein may be the trademarks of their respective proprietors.
+</p>
+                                <p>
+                                    <strong>Note</strong>
+                                    In some of the cases, you may note discrepancies between the printed documentation and the online
+                                    documentation. In these cases, the online documentation is the most up-to-date and should be pursued.
+                                </p>
+                            </li>
+                            <li>
+                                <h5>Scope</h5>
+                                <p>
+                                    This document is the release notes of PushFYI v1.4, identify PushFYI features and it is
+                                    used for the external purpose for PushFYI, Inc.
+                                </p>
+                            </li>
+                            <li>
+                                <h5>Purpose</h5>
+                                <p>
+                                    This document is a generic Release Notes document for use by PushFYI, Inc Company. It provides
+                                    guidance and an outline which is meant to assist the relevant management or technical staff, whether
+                                    client or user, in producing a project-specific Release Notes.  It is also useful reading for anyone
+                                    affected in developing or monitoring the PushFYI v1.4 (PushFYI App).
+                                </p>
+                            </li>
+                            <li>
+                                <h5>Definitions, Acronyms, and Abbreviations</h5>
+                                <p>PushFYI is Global Real-Time Data Streaming Engine for sending and getting messages in Real-Time.</p>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+                <div class="code-window">
+                    <div class="code-preview">
+                        <h3>About PushFYI Release</h3>
+                        <p>
+                            PushFYI v1.4 is third version by PushFYI, Inc. The user can choose
+                            the right platform and language to suit your requirements and download the
+                            PushFYI v1.4 at any time and start delivering Real-Time apps.
+                        </p>
+                        <table class="table table-bordered table-striped table-info">
+
+                            <thead>
+                                <tr>
+                                    <th>Version</th>
+                                    <th>Date</th>
+                                    <th>Summary of Changes</th>
+                                    <th>Author</th>
+                                    <th>Revision Marks(Yes/No)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">1.3</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">11/03/2017</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">Security changes and Bug fixes</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">PushFYI Inc.</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">No</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">1.2</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">03/10/2017</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">Bug fixes and Performance improvements</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">PushFYI Inc.</td>
+                                    <td style="font-family:Arial, Helvetica, sans-serif">No</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="code-window">
+                    <div class="code-preview">
+                        <h3>What’s New in PushFYI v1.4</h3>
+                        <p>
+							PushFYI Websocket Gateway Version 1.4 offers following features to build amazing real time applications.
+                        </p>
+                        <ul>
+                            <li>Python API</li>
+                            <li>Support TLS 1.0, TLS 1.1 and TLS 1.2</li>
+                            <li>Bug fixes and Performance improvements</li>
+                            <li>Interface Changes</li>
+                        </ul>                        
+                    </div>
+
+                </div>
+                <div class="code-window">
+                    <div class="code-preview">
+                        <h3>System Requirement</h3>
+                        <p>
+							<ul>
+								<li>Ubuntu Server 64 Bit. OR</li>
+								<li>Ubuntu Desktop 64 Bit</li>
+							</ul>                        							
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+			
+		
+		 
+			
+			<!-- end section -->
+			
+			
+			<!-- start section -4 -->
+			
+		      </article>
+        <!-- END Main content -->
+      </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+              <p>&copy; PushFYI 2017</p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <ul class="footer-menu">
+              
+                <li><a href="mailto:info@pushfyi.com">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+
+    <!-- Scripts -->
+    <script src="assets/js/theDocs.all.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+  </body>
+</html>

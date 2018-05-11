@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <title>PushFYI Setup</title>
+
+    <!-- Styles -->
+    <link href="assets/css/theDocs.all.min.css" rel="stylesheet">
+	<link href="assets/css/skin-yellow.css" rel="stylesheet"> 
+
+    <!-- Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,500%7CLato:300,400' rel='stylesheet' type='text/css'>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="assets/img/favicon.ico">
+	<style type="text/css">
+	
+		
+ 	.sidebar {width: 20%;}
+		#webSocket{display:none;}	
+		#noWebSocket{display:none;}
+	</style>
+  </head>
+
+  <body>
+
+    <header class="site-header sticky">
+
+      <!-- Top navbar & branding -->
+      <nav class="navbar navbar-light">
+        <div class="container">
+
+          <!-- Toggle buttons and brand -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+              <span class="glyphicon glyphicon-option-vertical"></span>
+            </button>
+
+            <button type="button" class="navbar-toggle for-sidebar" data-toggle="offcanvas">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
+          </div>
+          <!-- END Toggle buttons and brand -->
+
+          <!-- Top navbar -->
+          <div id="navbar" class="navbar-collapse collapse" aria-expanded="true" role="banner">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="releasenotes.html">Release Notes</a></li>
+             	
+              <li class="hero"><a href="changelog.html">Changelog</a></li>
+            </ul>
+          </div>
+          <!-- END Top navbar -->
+
+        </div>
+      </nav>
+      <!-- END Top navbar & branding -->
+      
+    </header>
+
+
+    <main class="container">
+      <div class="row">
+
+        <!-- Sidebar -->
+          <aside class="col-md-3 col-sm-3 sidebar">
+              <ul class="sidenav dropable sticky">
+                  <li class=""><a href="index.html">Welcome</a></li>
+                  <li>
+                      <a class="" href="#">Overview</a>
+                      <ul>
+                          <li><a href="pushfyioverview.html" class="">PushFYI Overview</a></li>
+                          <li><a href="apibasics.html">API Basics</a></li>
+                      </ul>
+                  </li>
+                  <li>
+                      <a class="" href="#">API Documentation</a>
+                      <ul>
+                          <a class="" href="#">Server API</a>
+                          <ul>
+
+                              <li><a href="dotnetapi.html">C# .NET API</a></li>
+                              <li><a href="javaapi.html">JAVA API</a></li>
+                              <li><a href="phpapi.html">PHP API</a></li>
+                              <li><a href="pythonapi.html">PYTHON API</a></li>
+
+                          </ul>
+                          <a class="" href="#">Client API</a>
+                          <ul>
+                              <li><a href="javascriptapi.html">JAVASCRIPT API</a></li>
+                              <li><a href="iosapi.html">iOS API</a></li>
+                              <li><a href="androidapi.html">ANDROID API</a></li>
+                          </ul>
+                      </ul>
+                  </li>
+                  <li class="active"><a href="testconnection.html">Test Connection</a></li>
+                  <li class=""><a href="troubleshoot.html">Troubleshoot</a></li>
+                  <li class=""><a href="https://pushfyi.com/contact-us">Report Issues</a></li>
+                  <li>
+                      <a class="" href="#">History</a>
+                      <ul>
+                          <li><a href="../v1.0/index.html">Version 1.0</a></li>
+                          <li><a href="../v1.2/index.html">Version 1.2</a></li>
+                          <li><a href="../v1.3/index.html">Version 1.3</a></li>
+                          <li><a href="../v1.4/index.html">Version 1.4</a></li>
+                      </ul>
+
+                  </li>
+              </ul>
+          </aside>
+        <!-- END Sidebar -->
+
+
+        <!-- Main content -->
+		  
+		  
+
+        <article class="col-md-9 col-sm-9 main-content" role="main">
+          
+         
+			
+			
+			
+						<!-- start section -5 -->
+			
+<section>
+
+ <h3>Welcome to Pushfyi</h3>
+ 
+	
+	
+  <div class="code-window">
+              <div class="code-preview">
+
+                <div class="row">
+                  <div class="col-md-6">
+					  <h3>Test connection to your pushfyi wsd instance</h3>
+					     <br> <br>
+					  
+					    <div class="alert alert-success" id="webSocket" role="alert">
+                  			This browser supports WebSockets
+                		</div>
+					   
+					  <div class="alert alert-danger" id="noWebSocket" role="alert">
+                  			This Browser does not support WebSockets
+                		</div>
+					  
+                      <div id="errormessage">
+                          <div class="alert alert-success" id="connected" role="alert">
+                              <strong>OK!</strong> Connected to Pushfyi ws gateway
+                          </div>
+                          <div class="alert alert-danger" id="disconnected" role="alert">
+                              <strong>ERROR!</strong> Connection failed
+                          </div>
+                      </div>
+                      <div id="loader" style="display:none;">
+                          <img src="assets/img/loader.gif" alt="loading...">
+                      </div>
+				   </div>
+
+                  <div class="col-md-6">
+                    <div class="jumbotron jumbotron-sm">
+                      <div class="container">
+                         <label for="usr">Url:</label>
+						  <input type="text" class="form-control" id="url" value="ws://localhost" >
+						  <p style="font-size:14px;"><input type="checkbox" id="tls"> Use secure WebSocket <strong>(TLS)</strong></p>
+                          <p style="font-size:14px;"><input type="checkbox" id="alt"> Use http alternate port</p>
+						  <label for="usr">Port:</label>
+						<input type="text" class="form-control" id="port" value="">
+                        <p>
+							<a class="btn btn-primary btn-lg" href="javascript:onTestConnection();" role="button">Test connection</a>
+						    <a class="btn btn-danger btn-lg" href="#" role="button">Disconnect</a>
+						</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+
+ </div> 
+			
+	
+</section>	
+			
+        </article>
+        <!-- END Main content -->
+      </div>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <a id="scroll-up" href="#"><i class="fa fa-angle-up"></i></a>
+
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+              <p>&copy; PushFYI 2017</p>
+          </div>
+          <div class="col-md-6 col-sm-6">
+            <ul class="footer-menu">
+              <!--<li><a href="page_changelog.html">Changelog</a></li>
+              <li><a href="page_credits.html">Credits</a></li>-->
+                <li><a href="mailto:info@pushfyi.com">Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END Footer -->
+
+    <script src="assets/js/theDocs.all.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/pushfyi.js"></script>
+
+    <script type="text/javascript">
+        document.getElementById('connected').style.display = 'none';
+        document.getElementById('disconnected').style.display = 'none';
+        $('#port').attr('disabled', 'disablde');
+        //test ws
+        if ("WebSocket" in window) {
+            document.getElementById('webSocket').style.display = 'block';
+        }
+        else {
+            document.getElementById('noWebSocket').style.display = 'block';
+        }
+
+        //register checkbox function
+        $('#tls').change(function () {
+            //get the url.
+            var url = $('#url').val();
+            var start = url.indexOf(":");
+            url = url.substring(start, url.length);
+            if (!$('#tls').is(':checked')) {
+                $('#url').val('ws'+url);
+            }
+            else {
+                $('#url').val('wss' + url);
+            }
+        });
+        //register alternate port checkbox function
+        $('#alt').change(function () {
+            if (!$('#alt').is(':checked')) {
+                $('#port').attr('disabled', 'disablde');
+            }
+            else {
+                $('#port').removeAttr('disabled');
+                $('#port').val('8080');
+            }
+        });
+        function onTestConnection() {
+            
+            document.getElementById('disconnected').style.display = 'none';
+            document.getElementById('connected').style.display = 'none';
+            document.getElementById('loader').style.display = 'block';
+            /*
+             * Form the url
+             */
+            var url = $('#url').val();
+            if ($('#alt').is(':checked')) {
+                url = url + ':' + $('#port').val();
+            }
+            
+            /*
+             * connect to pushfyi
+             */
+            if (url.length == 0) {
+                $('#disconnected').empty();
+                $('#disconnected').append('<strong>ERROR!</strong> Check URL');
+                document.getElementById('disconnected').style.display = 'block';
+                document.getElementById('connected').style.display = 'none';
+            }
+            console.log('url = ', url);
+            pushfyi = new Pushfyi("27d91add-8884-4a90-8a21-2c74b256fe7b", "27d91add-8884-4a90-8a21-2c74b256fe7b", url);
+            pushfyi.on("connected", function () {
+                document.getElementById('connected').style.display = 'block';
+                document.getElementById('disconnected').style.display = 'none';
+                document.getElementById('loader').style.display = 'none';
+            });
+            pushfyi.on("disconnected", function () {
+                $('#disconnected').empty();
+                $('#disconnected').append('<strong>ERROR!</strong> Connection Failed. <a class="btn btn-primary" href="Troubleshoot.html" role="button">Troubleshoot</a>');
+                document.getElementById('disconnected').style.display = 'block';
+                document.getElementById('connected').style.display = 'none';
+                document.getElementById('loader').style.display = 'none';
+            });
+        }
+        function onTestDisconnection() {
+            /*
+             * Disconnect pushfyi
+             */
+            
+            
+        }
+
+	</script>
+    
+
+  </body>
+</html>
