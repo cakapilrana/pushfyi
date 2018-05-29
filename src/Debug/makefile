@@ -54,7 +54,7 @@ all: pushfyi
 pushfyi: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cross G++ Linker'
-	g++ -L/home/vikas/workspace/wolverine/3rdparty/tinyxml/lib -o "pushfyi" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L../3rdparty/tinyxml/lib -o "pushfyi" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
